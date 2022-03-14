@@ -9,9 +9,10 @@ class LoginService extends ILoginService {
 
   @override
   Future<LoginResponse?> login(LoginRequest model) async {
-    final response = await manager.send<LoginRequest, LoginResponse>(
+    final response = await manager.send<LoginResponse, LoginResponse>(
       _loginRoute,
-      parseModel: model,
+      parseModel: LoginResponse(),
+      data: model,
       method: RequestType.POST,
     );
     if (response is LoginResponse) {

@@ -13,7 +13,7 @@ class ApplicationConstants {
   static AppMode get appMode =>
       kReleaseMode ? AppMode.Release : AppMode.FakeService;
 
-  static get baseUrl => appMode == AppMode.Release ? _debugUrl : _releaseUrl;
+  static get baseUrl => appMode == AppMode.Release ? _releaseUrl : _debugUrl;
 
   static String get secureKey => dotenv.get('SECURE_KEY');
 
